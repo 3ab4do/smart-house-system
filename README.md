@@ -8,19 +8,28 @@ Welcome to the **Smart House** repository! This project is an ongoing modular ho
 * **Status:** 🛠️ In Development
 
 ### 📝 Overview
-This system is designed to automatically protect indoor areas and drying clothes from unexpected rainstorms and harsh weather conditions.
+An intelligent window automation system designed to respond to changing environmental conditions, protecting indoor areas, improving air safety, and automating natural lighting.
 
-### ⚙️ How It Works
-1. **Rain Detection:** A Water/Rain Sensor continuously monitors the outdoor environment for moisture or raindrops.
-2. **Automated Motion:** When rain is detected, a **Servo Motor** smoothly retracts the clothesline indoors or closes the window.
-3. **Status Indicators:** * **Green LED:** Turns ON during clear/dry weather (Safe outside).
-   * **Red LED:** Turns ON when rain is detected (Retracted inside).
-4. **Smooth Servo Control:** Utilizes incremental angle stepping to ensure a quiet, steady, and mechanical-friendly movement without sudden jerks.
+### ⚙️ How It Works & Key Features
+
+1. **🌧️ Rain Protection & Clothesline Control:**
+   * **Mechanism:** A Water/Rain Sensor continuously monitors the outdoor environment.
+   * **Action:** When rain is detected, a **Servo Motor** smoothly retracts the drying clothes indoors or closes the window to prevent water damage.
+   * **Status Indicators:** * **Green LED:** Turns ON during clear/dry weather (Safe outside).
+     * **Red LED:** Turns ON when rain is detected (Retracted inside).
+
+2. **☀️ Ambient Light Control (LDR Sensor):**
+   * **Mechanism:** A Light Dependent Resistor (LDR) measures ambient outdoor light levels.
+   * **Action:** At sunset or when darkness is detected, the system automatically lowers the window blinds/shutters for privacy. At dawn, it opens them to allow natural daylight inside.
+
+3. **🚨 Toxic Gas & Fire Safety (MQ-135 Gas Sensor + Buzzer):**
+   * **Mechanism:** An MQ-135 Gas Sensor continuously monitors indoor air quality for harmful gases or smoke.
+   * **Action:** If a gas leak or smoke is detected, the window opens immediately for ventilation, and a **Buzzer Alarm** sounds loudly to alert occupants of the danger.
 
 ---
 
 ## 🚪 2. Smart Face-Recognition Door System
-* **Status:** ⏳ Coming Soon 
+* **Status:** ⏳ Coming Soon
 
 ### 📝 Overview
 An advanced keyless entry system that unlocks the main house door using facial recognition technology, eliminating the need for traditional keys or RFID cards.
@@ -35,4 +44,4 @@ An advanced keyless entry system that unlocks the main house door using facial r
 
 ## 🛠️ Built With
 * **Microcontrollers:** Arduino Uno / ESP32
-* **Sensors & Components:** Rain/Water Sensor, Servo Motor, LEDs, Camera Module
+* **Sensors & Actuators:** Rain/Water Sensor, LDR Sensor, MQ-135 Gas Sensor, Servo Motors, Buzzer, LEDs, ESP32-CAM Module

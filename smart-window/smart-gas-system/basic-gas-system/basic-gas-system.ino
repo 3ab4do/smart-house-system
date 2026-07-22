@@ -1,4 +1,4 @@
-#include <Servo.h>
+#include <Servo.h> // servo library
 
 Servo servoRight; 
 Servo servoLeft; 
@@ -20,16 +20,16 @@ void loop() {
   Serial.println(gasValue);
 
   if (gasValue >= 300) {
-    digitalWrite(redLed, HIGH);
-    digitalWrite(buzzer, HIGH);
+    digitalWrite(redLed, HIGH); // red led on when there's gas
+    digitalWrite(buzzer, HIGH); // buzzer on when there's gas
     
     servoRight.write(115); 
     servoLeft.write(65);  
   }
 
   if (gasValue <= 200) { 
-    digitalWrite(redLed, LOW);
-    digitalWrite(buzzer, LOW);
+    digitalWrite(redLed, LOW); // red led off when there's no gas
+    digitalWrite(buzzer, LOW); // buzzer off when there's no gas
     
     servoRight.write(25);  
     servoLeft.write(155); 

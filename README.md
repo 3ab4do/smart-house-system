@@ -21,7 +21,8 @@ An intelligent window automation system designed to respond to changing environm
 
 2. **☀️ Ambient Light Control (LDR Sensor):**
    * **Mechanism:** A Light Dependent Resistor (LDR) measures ambient outdoor light levels.
-   * **Action:** At sunset or when darkness is detected, the system automatically lowers the window blinds/shutters for privacy. At dawn, it opens them to allow natural daylight inside.
+   * **Action:** At sunset or when darkness is detected, the system automatically lowers the window blinds/shutters for privacy. At dawn, it opens them to allow natural daylight inside .
+   * **manual system :** To lower and raise the curtain manually
 
 3. **🚨 Toxic Gas & Fire Safety (MQ-135 Gas Sensor + Buzzer):**
    * **Mechanism:** An MQ-135 Gas Sensor continuously monitors indoor air quality for harmful gases or smoke.

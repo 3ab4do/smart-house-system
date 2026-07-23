@@ -26,12 +26,6 @@ void loop() {
     digitalWrite(redLed, LOW);
   } 
   else { // if water value > 200
-    myServo.write(67);
-    delay(1000);
-    myServo.write(45);
-    delay(1000);
-    myServo.write(22);
-    delay(1000);
     myServo.write(0);
     digitalWrite(greenLed, LOW);
     digitalWrite(redLed, HIGH); // red led on when there is water

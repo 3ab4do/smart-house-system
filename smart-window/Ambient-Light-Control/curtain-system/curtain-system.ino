@@ -2,16 +2,15 @@
 
 Servo curtainServo;
 
-// Pin definitions
-int ldrPin = A0;      // Analog pin for Light Sensor (LDR)
-int whiteLed = 3;     // Digital pin for White LED (Night room light)
+// --- Pin Definitions ---
+const int ldrPin = A0;      // Analog pin for Light Sensor (LDR)
+const int whiteLed = 3;     // Digital pin for White LED (Night room light)
+const int btnOpenPin = 4;   // Digital pin for Manual Open Button
+const int btnClosePin = 5;  // Digital pin for Manual Close Button
 
-// State tracking variable (prevents continuous motor rotation)
+// --- State Tracking & Constants ---
 bool isCurtainDown = false;
-
-// Time required for 4 full rotations (4000ms = approx 4 seconds)
-// Adjust this duration based on your servo motor's exact speed
-const int fourTurnsTime = 4000; 
+const int fourTurnsTime = 4000; // 4 seconds for 4 full turns
 
 void setup() {
   Serial.begin(9600); // Initialize serial communication
@@ -20,39 +19,72 @@ void setup() {
   curtainServo.write(90); // 90 degrees stops the 360-degree continuous servo
   
   pinMode(whiteLed, OUTPUT); // Set White LED pin as output
+
+  // Configure push buttons with internal pull-up resistors
+  // Button pressed = LOW, Button released = HIGH
+  pinMode(btnOpenPin, INPUT_PULLUP);
+  pinMode(btnClosePin, INPUT_PULLUP);
 }
 
 void loop() {
-  // Read analog value from the LDR sensor
+  // Read analog value from LDR
   int ldrValue = analogRead(ldrPin);
   
-  // Print sensor value to Serial Monitor for debugging
+  // Read digital state of manual buttons
+  int openBtnState = digitalRead(btnOpenPin);
+  int closeBtnState = digitalRead(btnClosePin);
+
+  // Print sensor value for debugging
   Serial.print("LDR Value: ");
   Serial.println(ldrValue);
 
-  // 1. Darkness detected (Lower the curtain with 4 rotations & turn ON White LED)
-  if (ldrValue < 300 && !isCurtainDown) {
-    digitalWrite(whiteLed, HIGH); // Turn ON White LED (Night light)
-
-    // Rotate clockwise to lower the curtain
-    curtainServo.write(180); // Full speed clockwise
-    delay(fourTurnsTime);    // Wait for 4 full turns
-    curtainServo.write(90);  // Stop the motor
-
-    isCurtainDown = true;    // Update state to indicate curtain is down
-  } 
-
-  // 2. Daylight detected (Raise the curtain with 4 rotations & turn OFF White LED)
-  else if (ldrValue >= 400 && isCurtainDown) {
-    digitalWrite(whiteLed, LOW);  // Turn OFF White LED (Daytime)
-
-    // Rotate counter-clockwise to raise the curtain
-    curtainServo.write(0);   // Full speed counter-clockwise
-    delay(fourTurnsTime);    // Wait for 4 full turns
-    curtainServo.write(90);  // Stop the motor
-
-    isCurtainDown = false;   // Update state to indicate curtain is raised
+  // 1. MANUAL CONTROL: Open Curtain (If Open Button is pressed AND curtain is down)
+  if (openBtnState == LOW && isCurtainDown) {
+    Serial.println("Manual Override: Opening Curtain...");
+    digitalWrite(whiteLed, LOW);   // Turn OFF LED
+    
+    curtainServo.write(0);        // Rotate counter-clockwise to raise
+    delay(fourTurnsTime);
+    curtainServo.write(90);       // Stop motor
+    
+    isCurtainDown = false;        // Update state
+  }
+  
+  // 2. MANUAL CONTROL: Close Curtain (If Close Button is pressed AND curtain is up)
+  else if (closeBtnState == LOW && !isCurtainDown) {
+    Serial.println("Manual Override: Closing Curtain...");
+    digitalWrite(whiteLed, HIGH);  // Turn ON LED
+    
+    curtainServo.write(180);      // Rotate clockwise to lower
+    delay(fourTurnsTime);
+    curtainServo.write(90);       // Stop motor
+    
+    isCurtainDown = true;         // Update state
   }
 
-  delay(200); // Read sensor every 200ms
+  // 3. AUTOMATIC CONTROL: Light Sensor (LDR) Logic
+  else {
+    // Darkness detected -> Lower curtain & Turn ON LED
+    if (ldrValue < 300 && !isCurtainDown) {
+      digitalWrite(whiteLed, HIGH);
+      
+      curtainServo.write(180);
+      delay(fourTurnsTime);
+      curtainServo.write(90);
+      
+      isCurtainDown = true;
+    } 
+    // Daylight detected -> Raise curtain & Turn OFF LED
+    else if (ldrValue >= 400 && isCurtainDown) {
+      digitalWrite(whiteLed, LOW);
+      
+      curtainServo.write(0);
+      delay(fourTurnsTime);
+      curtainServo.write(90);
+      
+      isCurtainDown = false;
+    }
+  }
+
+  delay(100); // Short delay for loop stability
 }

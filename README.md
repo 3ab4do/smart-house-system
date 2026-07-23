@@ -17,6 +17,7 @@ An intelligent window automation system designed to respond to changing environm
    * **Action:** When rain is detected, a **Servo Motor** smoothly retracts the drying clothes indoors or closes the window to prevent water damage.
    * **Status Indicators:** * **Green LED:** Turns ON during clear/dry weather (Safe outside).
      * **Red LED:** Turns ON when rain is detected (Retracted inside).
+     * **Buzzer:** turn on and play sound one time when rain is detected .
 
 2. **☀️ Ambient Light Control (LDR Sensor):**
    * **Mechanism:** A Light Dependent Resistor (LDR) measures ambient outdoor light levels.

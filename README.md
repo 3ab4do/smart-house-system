@@ -38,13 +38,16 @@ An intelligent window automation system designed to respond to changing environm
 An active indoor motion-detection security module designed to protect rooms and main halls from unauthorized movement using a Passive Infrared (PIR) sensor.
 
 ### ⚙️ Key Features & Mechanism
-1. **PIR Motion Tracking:** Detects human body heat and infrared movement within its coverage area.
-2. **Toggle Arm/Disarm Control:** A physical push button toggles the system state between Armed and Disarmed with software debouncing.
-3. **Status Indicators:**
-   * **🟢 Green LED:** Solid ON when armed and actively monitoring.
-   * **🔴 Red LED:** Blinks during an active intrusion event.
-4. **Pulsing Audio & Visual Alarm:**
-   * Activates a **1-second interval pulsing alarm** (200ms beep sound + Red LED flashing every 1000ms) upon detecting motion.
+1. **Dual-Button Manual Control:** Features two dedicated physical push buttons with internal pull-ups for clear and explicit operation:
+   * **Arm Button:** Activates security mode manually.
+   * **Disarm Button:** Instantly deactivates security mode and silences all alarms.
+2. **PIR Motion Tracking:** Detects infrared movement within its field of view when armed.
+3. **Status Indicators & Dynamic Alarm State:**
+   * **🟢 Green LED:** Solid ON when armed and monitoring normally.
+   * **🚨 Active Intrusion Alarm:** Upon detecting motion:
+     * **Green LED:** Turns **OFF** immediately.
+     * **Red LED & Buzzer:** Blink and beep synchronously in a **1-second realistic siren cycle** (500ms ON / 500ms OFF).
+   * **Auto-Reset:** Automatically restores the Green LED indicator once motion clears.
 
 ---
 

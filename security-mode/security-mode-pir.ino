@@ -1,4 +1,3 @@
-// 1. Pin Definitions
 const int pirPin = 2;          // Digital input pin for PIR motion sensor
 const int armButtonPin = 3;     // Digital input pin for ARM button
 const int disarmButtonPin = 4;  // Digital input pin for DISARM button
@@ -6,7 +5,6 @@ const int buzzerPin = 8;       // Digital output pin for audio alarm buzzer
 const int redLed = 13;         // Digital output pin for Alarm/Alert LED (Red)
 const int greenLed = 12;       // Digital output pin for System Armed LED (Green)
 
-// 2. Global Variables
 bool systemArmed = false;      // System status flag (true = Armed, false = Disarmed)
 int lastArmState = HIGH;       // Previous state for ARM button
 int lastDisarmState = HIGH;    // Previous state for DISARM button

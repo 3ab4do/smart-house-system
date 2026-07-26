@@ -26,7 +26,7 @@ void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
 
   Serial.begin(9600);
-  Serial.println("--- Night Perimeter Security System Started ---");
+  Serial.println("--- Night Security System Started ---");
 }
 
 void loop() {

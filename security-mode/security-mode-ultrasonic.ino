@@ -32,13 +32,17 @@ void setup() {
 void loop() {
   // --- 1. Button Control (Arm / Disarm) ---
   int buttonState = digitalRead(buttonPin);
+  
+  // Detect button press (Falling Edge)
   if (buttonState == LOW && lastButtonState == HIGH) {
     systemArmed = !systemArmed; // Toggle System On/Off
-    delay(200);                 // Debouncing delay
+    delay(150);                 // Debouncing delay
 
     if (systemArmed) {
       Serial.println("🟢 System ARMED");
       digitalWrite(greenLed, HIGH);
+      digitalWrite(redLed, LOW);
+      noTone(buzzerPin);
     } else {
       Serial.println("🔴 System DISARMED");
       digitalWrite(greenLed, LOW);
@@ -65,8 +69,8 @@ void loop() {
       long duration = pulseIn(echoPin, HIGH);
       int distance = duration * 0.034 / 2;
 
-      // Intrusion Check
-      if (distance > 0 && distance < DISTANCE_THRESHOLD) {
+      // Intrusion Check (Valid distance range between 2cm and 50cm)
+      if (distance >= 2 && distance <= DISTANCE_THRESHOLD) {
         Serial.println("🚨 INTRUDER DETECTED IN DARKNESS!");
         triggerSecurityAlarm();
       } else {
@@ -84,20 +88,19 @@ void loop() {
     }
   }
 
-  delay(50); // Reduced delay for faster system responsiveness
+  delay(30); // Fast responsiveness
 }
 
-// Optimized Alarm Subroutine
+// Optimized Alarm Subroutine (Short tone per loop for instant button response)
 void triggerSecurityAlarm() {
   digitalWrite(greenLed, LOW);
   
-  // Sound Pattern 1
+  // Flash Red LED and play siren tone
   digitalWrite(redLed, HIGH);
-  tone(buzzerPin, 2500);
-  delay(100);
-
-  // Sound Pattern 2
+  tone(buzzerPin, 2500, 80); // Tone plays for 80ms non-blocking
+  delay(80);
+  
   digitalWrite(redLed, LOW);
-  tone(buzzerPin, 1500);
-  delay(100);
+  tone(buzzerPin, 1500, 80); // Tone plays for 80ms non-blocking
+  delay(80);
 }

@@ -69,13 +69,13 @@ Creates a virtual boundary tripwire across doorways and windows that operates ex
 ## 🚨 4. Laser & LDR Perimeter Tripwire Security System
 
 ### 🎯 Objective
-Provides high-precision perimeter security using a invisible/visible laser line and LDR sensor to detect unauthorized tripwire breaches immediately.
+Provides high-precision perimeter security using a visible laser line and LDR sensor to detect unauthorized tripwire breaches immediately.
 
 ### ⚙️ Mechanism & Core Features
 
 * **🎮 Dual-Button Dedicated Control:**
   * **Arm Button:** Powers ON the laser diode module and activates perimeter monitoring.
-  * **Disarm Button:** Instantly powers OFF the laser module, deactivates the monitoring, and silences all alarms.
+  * **Disarm Button:** Instantly powers OFF the laser module, deactivates monitoring, and silences all alarms.
 * **🔴 Visual Status Feedback:**
   * **Disarmed State:** Solid `🔴 RED LED` indicates the system is powered OFF / inactive.
   * **Armed State:** Solid `🟢 GREEN LED` indicates active laser tripwire protection.
@@ -88,7 +88,22 @@ Provides high-precision perimeter security using a invisible/visible laser line 
 
 ---
 
-## 🚪 5. Smart AI Face-Recognition Door System
+## ⚡ 5. Smart Energy & Motion-Activated Lighting System
+
+### 🎯 Objective
+Optimizes home energy consumption by automatically controlling room illumination based on occupancy and ambient indoor/outdoor light levels.
+
+### ⚙️ Mechanism & Core Features
+
+* **💡 Dual-Condition Smart Automation:**
+  * **Daylight Efficiency:** Automatically keeps room lights **OFF** during daytime when natural ambient light is sufficient, regardless of indoor motion.
+  * **Occupancy Detection:** Turns lights **ON** automatically only when human presence is detected via the **PIR sensor** in dark environments ($< 500$ LDR threshold).
+* **⏱️ Smart Auto-Off Timeout:** Keeps lights illuminated for a set period after the occupant leaves or remains still, preventing sudden shutoffs while eliminating unnecessary energy waste.
+* **🔌 Relay Actuation:** Uses an isolated relay module capable of switching standard household AC lighting safely.
+
+---
+
+## 🚪 6. Smart AI Face-Recognition Door System
 
 ### 🎯 Objective
 Provides keyless, biometric access control using Computer Vision and Artificial Intelligence.

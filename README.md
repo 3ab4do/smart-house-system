@@ -66,7 +66,29 @@ Creates a virtual boundary tripwire across doorways and windows that operates ex
 
 ---
 
-## 🚪 4. Smart AI Face-Recognition Door System
+## 🚨 4. Laser & LDR Perimeter Tripwire Security System
+
+### 🎯 Objective
+Provides high-precision perimeter security using a invisible/visible laser line and LDR sensor to detect unauthorized tripwire breaches immediately.
+
+### ⚙️ Mechanism & Core Features
+
+* **🎮 Dual-Button Dedicated Control:**
+  * **Arm Button:** Powers ON the laser diode module and activates perimeter monitoring.
+  * **Disarm Button:** Instantly powers OFF the laser module, deactivates the monitoring, and silences all alarms.
+* **🔴 Visual Status Feedback:**
+  * **Disarmed State:** Solid `🔴 RED LED` indicates the system is powered OFF / inactive.
+  * **Armed State:** Solid `🟢 GREEN LED` indicates active laser tripwire protection.
+* **📡 Laser Tripwire Monitoring:**
+  * Continuously measures laser intensity focused directly onto an LDR sensor.
+  * If an intruder cuts the laser beam (light intensity drops below threshold):
+    1. The `🟢 GREEN LED` turns **OFF** instantly.
+    2. The `🔴 RED LED` and **Buzzer** pulse synchronously in 1-second alarm cycles (500ms ON / 500ms OFF).
+* **⚡ Energy Efficient & Safe:** The laser module remains completely powered OFF while disarmed to save power and extend component operational lifespan.
+
+---
+
+## 🚪 5. Smart AI Face-Recognition Door System
 
 ### 🎯 Objective
 Provides keyless, biometric access control using Computer Vision and Artificial Intelligence.

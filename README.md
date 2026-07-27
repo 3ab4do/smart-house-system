@@ -3,7 +3,7 @@
 
 ---
 
-## 🪟 1. Smart Window & Clothesline System
+## 🪟 1. Smart Window
 
 ### 🎯 Objective
 Protects furniture and laundry from sudden rain, instantly ventilates the house upon detecting toxic gas leaks, and automates window blinds according to ambient outdoor light.

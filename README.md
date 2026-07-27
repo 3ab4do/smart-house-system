@@ -88,7 +88,7 @@ Provides high-precision perimeter security using a visible laser line and LDR se
 
 ---
 
-## ⚡ 5. Smart Energy & Motion-Activated Lighting System
+## ⚡ 5. Smart Energy System
 
 ### 🎯 Objective
 Optimizes home energy consumption by automatically controlling room illumination based on occupancy and ambient indoor/outdoor light levels.

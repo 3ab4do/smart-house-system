@@ -1,6 +1,5 @@
 # 🏡 Smart House system
 
-
 > **An integrated, modular home automation and security ecosystem powered by Arduino and Computer Vision.**
 ---
 

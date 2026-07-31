@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-Servo curtainServo;    
+Servo curtainServo;
 
 // --- Pin Definitions ---
 const int ldrPin = A0;      // Analog pin for Light Sensor (LDR)

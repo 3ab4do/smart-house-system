@@ -2,7 +2,6 @@
 
 Servo myServo; 
 
-
 int waterSensorPin = A0;
 int greenLed = 3;
 int redLed = 4;

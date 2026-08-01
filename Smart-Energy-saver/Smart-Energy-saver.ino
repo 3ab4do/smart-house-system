@@ -3,7 +3,7 @@ const int pirPin = 2;       // PIR Motion Sensor
 const int ldrPin = A0;      // LDR Light Sensor
 const int relayPin = 7;     // Relay Module (Controls Room Light) 
 const int greenLed = 12;    // System Active Indicator
- 
+  
 // 2. Thresholds & Variables
 const int DARK_THRESHOLD = 500; // LDR threshold for darkness
 unsigned long lastMotionTime = 0;

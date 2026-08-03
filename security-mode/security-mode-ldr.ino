@@ -1,4 +1,4 @@
-// 1. Pin Definitions           
+// 1. Pin Definitions          
 const int ldrPin = A0;          // Analog input pin for LDR sensor
 const int laserPin = 7;         // Digital output pin to power Laser Module
 const int armButtonPin = 3;     // Push button to ARM system

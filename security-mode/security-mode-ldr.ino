@@ -6,7 +6,7 @@ const int disarmButtonPin = 4;  // Push button to DISARM system
 const int buzzerPin = 8;        // Digital output pin for alarm buzzer  
 const int redLed = 13;          // Digital output pin for Red LED (System OFF / Alarm)
 const int greenLed = 12;        // Digital output pin for Green LED (System ON / Active)
-
+ 
 // 2. Thresholds & Variables
 const int LIGHT_THRESHOLD = 600; // Adjust according to your laser & room light
 bool systemArmed = false;        // System state (true = Armed, false = Disarmed)

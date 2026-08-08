@@ -1,5 +1,5 @@
 // 1. Pin Definitions
-const int pirPin = 2;       // PIR Motion Sensor
+const int pirPin = 2;       // PIR Motion Sensor 
 const int ldrPin = A0;      // LDR Light Sensor 
 const int relayPin = 7;     // Relay Module (Controls Room Light)    
 const int greenLed = 12;    // System Active Indicator     

@@ -1,6 +1,6 @@
 // 1. Pin Definitions
 const int trigPin = 9;       // Ultrasonic Sensor Trig pin
-const int echoPin = 10;      // Ultrasonic Sensor Echo pin         
+const int echoPin = 10;      // Ultrasonic Sensor Echo pin          
 const int ldrPin = A1;       // LDR Light Sensor pin
 const int buttonPin = 3;     // Arm/Disarm Button pin
 const int buzzerPin = 8;     // Alarm Buzzer pin

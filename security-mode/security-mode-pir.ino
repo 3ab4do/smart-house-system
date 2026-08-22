@@ -1,4 +1,4 @@
-const int pirPin = 2;          // Digital input pin for PIR motion sensor      
+const int pirPin = 2;          // Digital input pin for PIR motion sensor     
 const int armButtonPin = 3;     // Digital input pin for ARM button 
 const int disarmButtonPin = 4;  // Digital input pin for DISARM button   
 const int buzzerPin = 8;       // Digital output pin for audio alarm buzzer   

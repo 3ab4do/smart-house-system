@@ -3,7 +3,7 @@
 Servo curtainServo;
    
 // --- Pin Definitions ---
-const int ldrPin = A0;      // Analog pin for Light Sensor (LDR)    
+const int ldrPin = A0;      // Analog pin for Light Sensor (LDR)   
 const int whiteLed = 3;     // Digital pin for White LED (Night room light)
 const int btnOpenPin = 4;   // Digital pin for Manual Open Button
 const int btnClosePin = 5;  // Digital pin for Manual Close Button

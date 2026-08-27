@@ -2,7 +2,7 @@
 
 // --- Definitions ---
 
-// Servo objects for both sashes 
+// Servo objects for both sashes  
 Servo servoRight; 
 Servo servoLeft; 
 

@@ -1,1 +1,29 @@
+const int in1 = 5;          // منفذ IN1 في الدرايفر
+const int in2 = 6;          // منفذ IN2 في الدرايفر (يدعم PWM)
 
+void setup() {
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+}
+
+void loop() {
+  // 1. التسريع التدريجي (من 0 إلى 255)
+  digitalWrite(in1, LOW); // اتجاه ثابت
+  for (int speed = 0; speed <= 255; speed += 5) {
+    analogWrite(in2, speed); // زيادة السرعة تدريجياً
+    delay(20);               // مهلة قصيرة لسلاسة التسارع
+  }
+
+  // البقاء على السرعة القصوى لمدة نصف ثانية
+  delay(500);
+
+  // 2. التخفيض التدريجي (من 255 إلى 0)
+  for (int speed = 255; speed >= 0; speed -= 5) {
+    analogWrite(in2, speed); // خفض السرعة تدريجياً
+    delay(20);               // مهلة قصيرة لسلاسة التباطؤ
+  }
+
+  // التوقف التام لفترة قصيرة قبل إعادة الحلقة
+  digitalWrite(in2, LOW);
+  delay(1000);
+}

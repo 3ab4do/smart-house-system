@@ -47,7 +47,7 @@ void loop() {
   // --- Check DISARM Button Press ---
   if (disarmState == LOW && lastDisarmState == HIGH) {
     if (systemArmed) {
-      systemArmed = true;
+      systemArmed = false;
       Serial.println("🔴 System DISARMED manually");
       digitalWrite(greenLed, LOW);  // Turn OFF green LED
       digitalWrite(redLed, LOW);    // Turn OFF red LED

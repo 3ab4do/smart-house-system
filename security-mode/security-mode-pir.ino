@@ -14,7 +14,7 @@ void setup() {
   pinMode(pirPin, INPUT);
   
   // Enable internal pull-up resistors for both buttons
-  pinMode(armButtonPin, INPUT_);
+  pinMode(armButtonPin, INPUT_PULLUP);
   pinMode(disarmButtonPin, INPUT_PULLUP);
 
   // Configure output pins

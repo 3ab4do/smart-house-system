@@ -1,5 +1,5 @@
 #include <Servo.h> // servo library     
-
+            
 Servo myServo; 
 
 int waterSensorPin = A0;

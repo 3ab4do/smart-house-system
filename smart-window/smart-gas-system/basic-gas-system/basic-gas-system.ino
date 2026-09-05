@@ -1,6 +1,6 @@
 #include <Servo.h> // servo library                        
                  
-Servo servoRight;           
+Servo servoRight;                           
 Servo servoLeft;                                      
                                                                
 int gasAnalog = A0;

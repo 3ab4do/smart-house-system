@@ -1,7 +1,7 @@
 #include <Servo.h> // servo library                        
                  
 Servo servoRight;           
-Servo servoLeft;                         
+Servo servoLeft;                                      
                                                                
 int gasAnalog = A0;
 int buzzer = 3;

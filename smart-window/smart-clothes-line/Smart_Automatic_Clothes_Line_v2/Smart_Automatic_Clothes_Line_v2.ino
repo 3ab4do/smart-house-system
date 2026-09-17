@@ -1,7 +1,7 @@
 #include <Servo.h> // Include the Servo library                                 
 
 Servo myServo; 
-
+      
 // Pin definitions
 int waterSensorPin = A0; // Analog pin for the water/rain sensor
 int greenLed = 3;        // Digital pin for the green LED (Clear weather indicator)

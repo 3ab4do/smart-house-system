@@ -9,7 +9,7 @@ int redLed = 4;          // Digital pin for the red LED (Rain alert indicator)
 
 // Variable to store the current angle of the servo motor
 int currentAngle = 90; 
-
+    
 void setup() {
   Serial.begin(9600); // Initialize serial communication at 9600 baud rate
   

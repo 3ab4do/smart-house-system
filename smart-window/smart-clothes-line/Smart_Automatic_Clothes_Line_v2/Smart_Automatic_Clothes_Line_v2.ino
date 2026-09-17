@@ -5,7 +5,7 @@ Servo myServo;
 // Pin definitions
 int waterSensorPin = A0; // Analog pin for the water/rain sensor
 int greenLed = 3;        // Digital pin for the green LED (Clear weather indicator)
-int redLed = 4;          // Digital pin for the red LED (Rain alert indicator)          
+int redLed = 4;          // Digital pin for the red LED (Rain alert indicator)              
 
 // Variable to store the current angle of the servo motor
 int currentAngle = 90; 

@@ -10,7 +10,7 @@ const unsigned long LIGHT_TIMEOUT = 10000; // Keep light ON for 10 seconds after
 
 void setup() {
   pinMode(pirPin, INPUT);
-  pinMode(ldrPin, INPUT);
+  pinMode(ldrPin, INPUT);    
   pinMode(relayPin, OUTPUT);
   pinMode(greenLed, OUTPUT);
 

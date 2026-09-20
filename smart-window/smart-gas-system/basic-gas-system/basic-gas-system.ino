@@ -4,7 +4,7 @@ Servo servoRight;
 Servo servoLeft;                                             
        
 int gasAnalog = A0;        
-int buzzer = 3;       
+int buzzer = 3;          
 int redLed = 4;
 
 void setup() {

@@ -11,7 +11,7 @@ const unsigned long LIGHT_TIMEOUT = 10000; // Keep light ON for 10 seconds after
 void setup() {
   pinMode(pirPin, INPUT);
   pinMode(ldrPin, INPUT);    
-  pinMode(relayPin, OUTPUT);
+  pinMode(relayPin, OUTPUT);    
   pinMode(greenLed, OUTPUT);
 
   // Default: Turn OFF Light Relay (Active LOW or HIGH depending on relay module)
